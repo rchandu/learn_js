@@ -2,32 +2,8 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
-      integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
-      integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
-      crossorigin="anonymous"
-    ></script>
-
+    <script src="common/js/loader.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Hoisting</title>
     <style type="text/css">
       pre {
@@ -41,28 +17,24 @@
   </head>
   <body class="mb-5 pb-5">
     <div class="container pt-4">
-      <a class="btn btn-outline-secondary" href="/" role="button">Back</a>
-
       <h1 class="mt-3">Hoisting</h1>
       <hr />
       <div>
         <p>
-          Hoisting is thought up as a general way of thinking about how
-          execution contexts (specifically the creation and execution phases)
-          work in JavaScript. It moves creation contexts above execution
-          contexts. JavaScript only hoists declarations, not initializations.
+          Hoisting is thought up as a general way of thinking about how execution contexts
+          (specifically the creation and execution phases) work in JavaScript. It moves creation
+          contexts above execution contexts. JavaScript only hoists declarations, not
+          initializations.
         </p>
         <p>
-          Note: Conceptually, for example, a strict definition of hoisting
-          suggests that variable and function declarations are physically moved
-          to the top of your code, but this is not in fact what happens.
-          Instead, the variable and function declarations are put into memory
-          during the compile phase, but stay exactly where you typed them in
-          your code.
+          Note: Conceptually, for example, a strict definition of hoisting suggests that variable
+          and function declarations are physically moved to the top of your code, but this is not in
+          fact what happens. Instead, the variable and function declarations are put into memory
+          during the compile phase, but stay exactly where you typed them in your code.
         </p>
         <span>
           Ref:
-          <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting"
+          <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting" target="_blank"
             >https://developer.mozilla.org/en-US/docs/Glossary/Hoisting</a
           >
         </span>
@@ -72,11 +44,10 @@
       <div class="card mt-3">
         <div class="card-body">
           <p>
-            Below we have a function <code>printMessage</code>, which is invoked
-            before and after it's definition but, is available at both times.
-            This is due to <strong>Definition of functions</strong> is done at
-            the top of the context making the functions avialable for execution
-            at both the places.
+            Below we have a function <code>printMessage</code>, which is invoked before and after
+            it's definition but, is available at both times. This is due to
+            <strong>Definition of functions</strong> is done at the top of the context making the
+            functions avialable for execution at both the places.
           </p>
           <pre>
 printMessage("MESSAGE-1");
@@ -92,24 +63,22 @@ printMessage("MESSAGE-2");</pre
       </div>
 
       <hr class="mt-5" />
-      <p class="lead">
-        Check console for while checking out below experiments.
-      </p>
+      <p class="lead">Check console for while checking out below experiments.</p>
       <ul class="list-group" id="list-variants"></ul>
 
       <div class="mt-5">
         Refs:
         <ol>
           <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting"
+            <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting" target="_blank"
               >Mozilla MDN entry
             </a>
           </li>
           <li>
             <a
               href="https://blog.bitsrc.io/hoisting-in-modern-javascript-let-const-and-var-b290405adfda"
-              >Nice article that explains lexical environment by Sukhjinder
-              Arora</a
+              target="_blank"
+              >Nice article that explains lexical environment by Sukhjinder Arora</a
             >
           </li>
         </ol>
