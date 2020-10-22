@@ -4,65 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Learn JS home</title>
-
-    <style type="text/css">
-      #tutorial-container {
-        display: flex;
-        height: 100vh;
-        width: 100vw;
-        padding: 4px 0;
-      }
-
-      #tutorial-toc {
-        flex-grow: 0;
-        min-width: 200px;
-        max-width: max-content;
-        padding: 4px 2px;
-      }
-
-      #tutorial-content {
-        flex-grow: 1;
-        border: 1px solid #e6e6e6;
-        margin: 4px 8px;  
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
-      }
-    </style>
   </head>
-  <body id="tutorial-container">
-    <div id="tutorial-toc">
-      <strong>Tutorials</strong>
-      <hr />
-      <div id="list-tutorials" class="list-group list-group-flush"></div>
-    </div>
-    <iframe id="tutorial-content"></iframe>
-
-    <script type="text/javascript">
-      function selectLink(ev) {
-        ev.preventDefault();
-        ev.stopPropagation();
-        console.info(`Redirecting to ${this.href} for ${this.textContent}`);
-        document.getElementById("tutorial-content").src = this.href;
-      }
-
-      function addListItem(currItem = {}) {
-        const listContainerEl = document.getElementById("list-tutorials");
-        const pageLink = document.createElement("a");
-        pageLink.classList.add("list-group-item");
-        pageLink.classList.add("list-group-item-action");
-        pageLink.href = currItem.url;
-        pageLink.textContent = currItem.title;
-        pageLink.addEventListener("click", selectLink);
-        listContainerEl.appendChild(pageLink);
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const learnItemList = [
-          { title: "Hoisting", url: "hoisting" },
-          { title: "Hoisting", url: "hoisting" },
-          { title: "Hoisting", url: "hoisting" },
-        ];
-        learnItemList.forEach((x, i) => addListItem(x));
-      });
-    </script>
+  <body>
+    <div>Click on an item on left sidebar</div>
   </body>
 </html>
