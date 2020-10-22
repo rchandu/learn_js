@@ -11,65 +11,89 @@
       <h1 class="mt-3">Bind, call and apply</h1>
       <hr />
       <div>
+        <h4>Function.prototype.call()</h4>
         <p>
-          Hoisting is thought up as a general way of thinking about how execution contexts
-          (specifically the creation and execution phases) work in JavaScript. It moves creation
-          contexts above execution contexts. JavaScript only hoists declarations, not
-          initializations.
+          The method Call invokes the function and allows you to pass in arguments one by one using
+          commas.
         </p>
-        <p>
-          Note: Conceptually, for example, a strict definition of hoisting suggests that variable
-          and function declarations are physically moved to the top of your code, but this is not in
-          fact what happens. Instead, the variable and function declarations are put into memory
-          during the compile phase, but stay exactly where you typed them in your code.
-        </p>
-        <span>
-          Ref:
-          <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting" target="_blank"
-            >https://developer.mozilla.org/en-US/docs/Glossary/Hoisting</a
-          >
-        </span>
-      </div>
-
-      <hr />
-      <div class="card mt-3">
-        <div class="card-body">
-          <p>
-            Below we have a function <code>printMessage</code>, which is invoked before and after
-            it's definition but, is available at both times. This is due to
-            <strong>Definition of functions</strong> is done at the top of the context making the
-            functions avialable for execution at both the places.
-          </p>
-          <pre>
-printMessage("MESSAGE-1");
-function printMessage(n) {
-  const targetEl = document.getElementById("target_1");
-  const currText = targetEl.textContent;
-  targetEl.textContent = `${currText} -- ${n}`;
+        <pre>
+let customer1 = { name: 'Leo', email: 'leo@gmail.com' };
+let customer2 = { name: 'Nat', email: 'nat@hotmail.com' };
+function greeting(text) {
+    console.log(`${text} ${this.name}`);
 }
-printMessage("MESSAGE-2");</pre
-          >
-          <div id="target_1"></div>
-        </div>
+greeting.call(customer1, 'Hello'); // Hello Leo
+greeting.call(customer2, 'Hello'); // Hello Nat
+        </pre>
       </div>
 
-      <hr class="mt-5" />
-      <p class="lead">Check console for while checking out below experiments.</p>
-      <ul class="list-group" id="list-variants"></ul>
+      <div>
+        <h4>Function.prototype.apply()</h4>
+        <p>
+          The method Apply invokes the function and allows you to pass in arguments as an array.
+        </p>
+        <pre>
+let customer1 = { name: 'Leo', email: 'leo@gmail.com' };
+let customer2 = { name: 'Nat', email: 'nat@hotmail.com' };
+function greeting(text, text2) {
+    console.log(`${text} ${this.name}, ${text2}`);
+}
+greeting.apply(customer1, ['Hello', 'How are you?']); // output Hello Leo, How are you?
+greeting.apply(customer2, ['Hello', 'How are you?']); // output Hello Natm How are you?
+        </pre>
+      </div>
+
+      <div>
+        <h4>Function.prototype.bind()</h4>
+        <p>
+          The Bind method returns a new function, allowing you to pass in a this array and any
+          number of arguments. Use it when you want that function to later be called with a certain
+          context like events.
+        </p>
+        <pre>
+let customer1 = { name: 'Leo', email: 'leo@gmail.com' };
+let customer2 = { name: 'Nat', email: 'nat@hotmail.com' };
+function greeting(text) {
+    console.log(`${text} ${this.name}`);
+}
+let helloLeo = greeting.bind(customer1);
+let helloNat = greeting.bind(customer2);
+helloLeo('Hello'); // Hello Leo
+helloNat('Hello'); // Hello Nat
+        </pre>
+        <strong>A probable Bind implementation</strong>
+        <pre>
+Function.prototype.bind = function(context) {
+  var fn = this;
+  return function() {
+      fn.apply(context, arguments);
+  };
+};
+        </pre>
+      </div>
 
       <div class="mt-5">
         Refs:
         <ol>
           <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting" target="_blank"
-              >Mozilla MDN entry
-            </a>
+            <a
+              href="https://medium.com/@leonardobrunolima/javascript-tips-apply-vs-call-vs-bind-d738a9e8b4e1"
+              target="_blank"
+              >Good medium article by Leonardo Bruno Lima</a
+            >
           </li>
           <li>
             <a
-              href="https://blog.bitsrc.io/hoisting-in-modern-javascript-let-const-and-var-b290405adfda"
+              href="https://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind"
               target="_blank"
-              >Nice article that explains lexical environment by Sukhjinder Arora</a
+              >Nice explanation on StackOverflow</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://medium.com/@omergoldberg/javascript-call-apply-and-bind-e5c27301f7bb"
+              target="_blank"
+              >ELI5 on same by Omer Goldberg</a
             >
           </li>
         </ol>
