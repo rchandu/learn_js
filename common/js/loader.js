@@ -25,8 +25,8 @@ function loadCommon() {
 }
 
 const items = [
-  { title: "Hoisting", url: "hoisting" },
-  { title: "Bind, Call and apply", url: "bind" },
+  { title: "Hoisting", url: "/hoisting" },
+  { title: "Bind, Call and apply", url: "/bind" },
 ];
 
 function addItem(listContainerEl, currItem = {}) {
