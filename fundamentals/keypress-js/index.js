@@ -25,4 +25,5 @@ function initiateBaseShortcuts(targetEl) {
 document.addEventListener("DOMContentLoaded", function () {
   const targetEl = document.getElementById("root");
   initiateBaseShortcuts(targetEl);
+  console.log(listener.get_registered_combos());
 });
