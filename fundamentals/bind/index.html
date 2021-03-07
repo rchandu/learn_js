@@ -10,7 +10,7 @@
     <div class="container pt-4">
       <h1 class="mt-3">Bind, call and apply</h1>
       <hr />
-      <div>
+      <section>
         <h4>Function.prototype.call()</h4>
         <p>
           The method Call invokes the function and allows you to pass in arguments one by one using
@@ -25,9 +25,9 @@ function greeting(text) {
 greeting.call(customer1, 'Hello'); // Hello Leo
 greeting.call(customer2, 'Hello'); // Hello Nat
         </pre>
-      </div>
+      </section>
 
-      <div>
+      <section>
         <h4>Function.prototype.apply()</h4>
         <p>
           The method Apply invokes the function and allows you to pass in arguments as an array.
@@ -41,9 +41,9 @@ function greeting(text, text2) {
 greeting.apply(customer1, ['Hello', 'How are you?']); // output Hello Leo, How are you?
 greeting.apply(customer2, ['Hello', 'How are you?']); // output Hello Natm How are you?
         </pre>
-      </div>
+      </section>
 
-      <div>
+      <section>
         <h4>Function.prototype.bind()</h4>
         <p>
           The Bind method returns a new function, allowing you to pass in a this array and any
@@ -70,7 +70,7 @@ Function.prototype.bind = function(context) {
   };
 };
         </pre>
-      </div>
+      </section>
 
       <div class="mt-5">
         Refs:

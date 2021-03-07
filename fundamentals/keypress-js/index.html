@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <script src="/common/js/loader.js"></script>
+    <script src="/keypress-js/keypress.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Hoisting</title>
+  </head>
+  <body class="mb-5 pb-5">
+    <div class="container pt-4">
+      <h1 class="mt-3">Understanding keypress JS</h1>
+      <hr />
+      <div>
+        <p>
+          Hoisting is thought up as a general way of thinking about how execution contexts
+          (specifically the creation and execution phases) work in JavaScript. It moves creation
+          contexts above execution contexts. JavaScript only hoists declarations, not
+          initializations.
+        </p>
+      </div>
+      <div id="root" class="playground">
+        Keyboard shortcuts should vary as below
+        <ol>
+          <li>
+            <code>shit+r</code>
+            will toggle background color to and from red
+          </li>
+          <li>
+            <code>ctrl+j</code>
+            shows number of consecutive times pressed:
+            <span id="cmd_counter"><strong>0</strong></span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="mt-5">
+        References:
+        <ol>
+          <li>
+            <a href="http://dmauro.github.io/Keypress/" target="_blank">Keypress JS library </a>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <script src="keypress-js/index.js" type="text/javascript"></script>
+  </body>
+</html>

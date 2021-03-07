@@ -27,6 +27,7 @@ function loadCommon() {
 const items = [
   { title: "Hoisting", url: "/hoisting" },
   { title: "Bind, Call and apply", url: "/bind" },
+  { title: "Keypress JS", url: "/keypress-js" },
 ];
 
 function addItem(listContainerEl, currItem = {}) {
